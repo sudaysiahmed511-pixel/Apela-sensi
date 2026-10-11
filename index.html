@@ -1,1 +1,61 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APELA SENSI</title>
+<style>
+body {
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 25px 12px;
+}
+h1 { color: #00e5ff; }
+.card {
+  background: #202020;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+input, button {
+  padding: 12px;
+  margin: 8px;
+  border-radius: 8px;
+}
+button {
+  background: #00e5ff;
+  border: none;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>APELA SENSI</h1>
+<p>FREE FIRE SETTINGS</p>
+<div class="card">
+<h2>Resolution</h2>
+<input id="res" placeholder="4000x1799">
+<h2>General Sensitivity</h2>
+<input id="sensi" type="number" placeholder="10-200">
+<br>
+<button onclick="showSettings()">Calculate</button>
+<p id="result"></p>
+</div>
+<script>
+function showSettings() {
+  const res = document.getElementById('res').value;
+  const sensi = Number(document.getElementById('sensi').value);
+  if (!res || sensi < 10 || sensi > 200) {
+    document.getElementById('result').textContent =
+      'Enter resolution and sensitivity from 10 to 200.';
+    return;
+  }
+  document.getElementById('result').textContent =
+    'Resolution: ' + res + ' | General: ' + sensi;
+}
+</script>
+</body>
+  </html>
